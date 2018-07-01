@@ -1,25 +1,48 @@
 'use strict'
 
 const webpack = require('webpack');
-const path =require('path');
-
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextCssPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const srcPath = path.join(__dirname, '/../src');
 
 module.exports = {
-      module: {
+    mode: "development",
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        port: 8000,
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/assets/index.html',
+            filename: 'index.html'
+        }),
+
+    ],
+    module: {
           rules: [
               {
                   test: /\.(s*)css$/,
                   use: [
-                      'style-loader',
                       {
-                          loader: 'css-loader',
-                          options:
-                              { parser: 'postcss-scss',
-                                  importLoaders: 1
-                              }
+                          loader: MiniCssExtractPlugin.loader,
+                          options: {
+                              publicPath: '../'
+                          }
                       },
-                  ]
+                      'css-loader',
+                      'sass-loader',
+                      {
+                          loader:'postcss-loader',
+                          options: {
+                              syntax: 'postcss-scss'
+                          }
+                      }
+                  ],
               },
               {
                   test: /\.html$/,
@@ -44,4 +67,4 @@ module.exports = {
               }
           ]
       }
-}
+};

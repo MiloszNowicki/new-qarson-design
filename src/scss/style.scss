@@ -1,5 +1,7 @@
-.header {
-  &-title {
-    color: darkred;
-  }
+@import "grid";
+
+* {
+  background-color: black;
+  border: deepskyblue solid 1px;
+  color: floralwhite;
 }
