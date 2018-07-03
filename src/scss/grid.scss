@@ -1,3 +1,35 @@
+@import "variables";
+
+@mixin grid-item($row-start, $row-end, $column-start, $column-end) {
+  grid-row-start: $row-start;
+  grid-row-end: $row-end;
+  grid-column-start: $column-start;
+  grid-column-end: $column-end;
+}
+
+.grid {
+  width: 100vw;
+  height: 100vh;
+  &__container {
+    max-width:100%;
+    max-height: 100%;
+    grid-row-gap: $row-gap;
+    grid-column-gap: $column-gap;
+    grid-template-rows:
+            [row-start][row-end]
+            [row-start][row-end]
+            [row-start][row-end]
+            [row-start][row-end]
+            [row-start][row-end]
+            [row-start][row-end]
+            [row-start][row-end]
+            [row-start][row-end]
+            [row-start][row-end]
+            [row-start][row-end]
+    grid-template-columns: repeat($column-number, [column-start] $column-size [column-end]);
+  }
+}
+
 .grid {
   &__container {
     display: grid;
@@ -5,22 +37,60 @@
     height: 100vh;
     max-width: 100%;
     max-height: 100%;
-    //grid-template-columns: [first] 25% [second] 50% [third] 25%;
     grid-template-columns: repeat(3, [col-start]  1fr [col-end]);
-    //grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: [first-row] 10% [second-row] 2fr  [third-row] 1fr;
-    div {border: solid 2px darkviolet}
+    //grid-column-gap: 30px;
+    grid-template-rows: [first-row] 10% [second-row] 2fr  [third-row] 1fr [fourth-row] 1fr;
+    gap: 50px;
+    //justify-items: stretch;
+    //justify-content: end;
+    //align-items: end;
+    div {border: solid 2px deeppink}
     grid-template-areas:
             "header header header"
-            ". . ."
-            "section section section";
-    &-header {
+            "section section section"
+            "footer  footer   footer";
+    &--header {
       grid-area: header;
       background-color: blueviolet;
     }
-    .section {
+    &--section {
       grid-area: section;
       background-color: deepskyblue;
+    }
+    &--footer {
+      grid-area: footer;
+      background-color: violet;
+    }
+  }
+}
+
+.gumowa-jasczurka {
+  @include grid-item(4, 4, 1, 3); // 7 8 1 3 ?? ?? brzmi lepiej ale nie działa
+  background-color: greenyellow;
+  justify-self: center;
+  align-self: stretch;
+}
+
+.gumowa-kaczka {
+  background-color: yellow;
+  width:50px;
+  height:50px;
+  justify-self: end;
+}
+.flex-container {
+  display: flex;
+  flex-flow: row;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 10px;
+  &__item {
+    flex: 25%;
+    max-width: 100px;
+    background-color: aqua;
+    background-clip: content-box;
+    padding: 10px;
+    &--darkviolet {
+      color: darkviolet;
     }
   }
 }
