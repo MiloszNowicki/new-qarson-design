@@ -5,3 +5,14 @@
   border: deepskyblue solid 1px;
   color: floralwhite;
 }
+
+.presentation {
+  display: flex;
+  max-width: 100%;
+  &--logo{
+
+  }
+  &--description {
+
+  }
+}

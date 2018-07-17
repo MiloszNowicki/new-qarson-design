@@ -7,59 +7,70 @@
   grid-column-end: $column-end;
 }
 
-.grid {
-  width: 100vw;
-  height: 100vh;
-  &__container {
-    max-width:100%;
-    max-height: 100%;
-    grid-row-gap: $row-gap;
-    grid-column-gap: $column-gap;
-    grid-template-rows:
-            [row-start][row-end]
-            [row-start][row-end]
-            [row-start][row-end]
-            [row-start][row-end]
-            [row-start][row-end]
-            [row-start][row-end]
-            [row-start][row-end]
-            [row-start][row-end]
-            [row-start][row-end]
-            [row-start][row-end]
-    grid-template-columns: repeat($column-number, [column-start] $column-size [column-end]);
-  }
-}
 
 .grid {
+  width: 100vw;
+  max-height: 100%;
+  height: 100%;
   &__container {
     display: grid;
-    width: 100vw;
-    height: 100vh;
-    max-width: 100%;
-    max-height: 100%;
-    grid-template-columns: repeat(3, [col-start]  1fr [col-end]);
+    align-self: center;
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+    grid-template-columns: repeat(5, [col-start]  1fr [col-end]);
     //grid-column-gap: 30px;
-    grid-template-rows: [first-row] 10% [second-row] 2fr  [third-row] 1fr [fourth-row] 1fr;
-    gap: 50px;
+    grid-template-rows: repeat(20, [row-start]  100px [row-end]);
+    gap: 10px;
     //justify-items: stretch;
     //justify-content: end;
     //align-items: end;
     div {border: solid 2px deeppink}
     grid-template-areas:
-            "header header header"
-            "section section section"
-            "footer  footer   footer";
+            "header header header header header"
+            "description description photo photo photo"
+            "description description photo photo photo"
+            "description description photo photo photo"
+            "description description photo photo photo"
+            "faces faces faces faces faces"
+            "faces faces faces faces faces"
+            "faces faces faces faces faces"
+            "faces faces faces faces faces"
+            "service  service  service service  service"
+            "service  service  service service  service"
+            "service  service  service service  service"
+            "acces acces acces acces acces"
+            "acces acces acces acces acces"
+            "acces acces acces acces acces"
+            "banner banner banner banner banner"
+            "banner banner banner banner banner"
+            "footer footer footer footer footer"
+            "footer footer footer footer footer"
+            "footer footer footer footer footer";
+
     &--header {
       grid-area: header;
-      background-color: blueviolet;
     }
-    &--section {
-      grid-area: section;
-      background-color: deepskyblue;
+    &--description {
+      grid-area: description;
+    }
+    &--photo {
+      grid-area: photo;
+    }
+    &--faces {
+      grid-area: faces;
+    }
+    &--service {
+      grid-area: service;
+    }
+    &--acces {
+      grid-area:acces;
+    }
+    &--banner {
+      grid-area: banner;
     }
     &--footer {
       grid-area: footer;
-      background-color: violet;
     }
   }
 }
