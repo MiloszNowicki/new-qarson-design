@@ -1,0 +1,35 @@
+$menu-item-width: 100%/6;
+
+@mixin menu__element() {
+  flex-basis:$menu-item-width;
+  padding: 15px;
+  display: block;
+  background-color: deepskyblue;
+  //min-height: 20px;
+}
+
+
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+
+  &__points-de-vente {
+    @include menu__element()
+  }
+
+  &__mon-compte {
+    @include menu__element()
+  }
+
+  &__ma-selection {
+    @include menu__element()
+  }
+
+  &__aide {
+    @include menu__element()
+  }
+}

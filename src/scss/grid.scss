@@ -20,13 +20,14 @@
     margin: 0 auto;
     grid-template-columns: repeat(5, [col-start]  1fr [col-end]);
     //grid-column-gap: 30px;
-    grid-template-rows: repeat(20, [row-start]  100px [row-end]);
+    grid-template-rows: repeat(21, [row-start]  100px [row-end]);
     gap: 10px;
     //justify-items: stretch;
     //justify-content: end;
     //align-items: end;
     div {border: solid 2px deeppink}
     grid-template-areas:
+            ". . menu menu menu"
             "header header header header header"
             "description description photo photo photo"
             "description description photo photo photo"
@@ -48,6 +49,9 @@
             "footer footer footer footer footer"
             "footer footer footer footer footer";
 
+    &--menu {
+      grid-area: menu;
+    }
     &--header {
       grid-area: header;
     }
