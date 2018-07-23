@@ -28,7 +28,7 @@
     div {border: solid 2px deeppink}
     grid-template-areas:
             ". . menu menu menu"
-            "header header header header header"
+            "logo navigation navigation navigation contact"
             "description description photo photo photo"
             "description description photo photo photo"
             "description description photo photo photo"
@@ -49,11 +49,18 @@
             "footer footer footer footer footer"
             "footer footer footer footer footer";
 
+
     &--menu {
       grid-area: menu;
     }
-    &--header {
-      grid-area: header;
+    &--logo {
+      grid-area: logo;
+    }
+    &--navigation {
+      grid-area: navigation;
+    }
+    &--contact {
+      grid-area: contact;
     }
     &--description {
       grid-area: description;

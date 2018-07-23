@@ -2,6 +2,7 @@ $menu-item-width: 100%/6;
 
 @mixin menu__element() {
   flex-basis:$menu-item-width;
+  max-height: 100%;
   padding: 15px;
   display: block;
   background-color: deepskyblue;
@@ -11,11 +12,12 @@ $menu-item-width: 100%/6;
 
 
 .menu {
+  height: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-
+  align-content: center;
 
   &__points-de-vente {
     @include menu__element()
