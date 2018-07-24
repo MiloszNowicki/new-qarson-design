@@ -1,0 +1,49 @@
+$menu-item-width: 100%/6;
+
+//@mixin menu__element() {
+//  flex-basis:$menu-item-width;
+//  padding: 15px;
+//  display: block;
+//  background-color: deepskyblue;
+//  //min-height: 20px;
+//}
+
+
+
+//.header {
+//  height: 100%;
+//  display: flex;
+//  flex-direction: row;
+//  flex-wrap: nowrap;
+//  justify-content: space-between;
+
+  //&__logo {
+  //    flex-basis: $menu-item-width;
+  //    background-color: aquamarine;
+  //}
+
+  //&__
+  .navigation {
+    max-height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    flex-basis: $menu-item-width*4;
+    background-color: aqua;
+
+    &__item {
+      flex-basis: auto;
+      display: block;
+      padding: 15px;
+      background-color: aquamarine;
+    }
+
+  //}
+
+  //&__contact {
+  //  flex-basis: $menu-item-width;
+  //  background-color: chartreuse;
+  //}
+}
