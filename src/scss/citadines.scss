@@ -1,0 +1,12 @@
+.citadines {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: nowrap;
+
+  &__title {
+    flex-basis: 25%;
+  }
+  &__example{
+    flex-basis: 75%;
+  }
+}

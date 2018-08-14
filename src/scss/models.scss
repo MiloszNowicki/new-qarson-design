@@ -1,0 +1,15 @@
+.models {
+  @include specify-grid(4, 1fr,  models-row-start, models-row-end, 3, 1fr, models-col-start, models-col-end);
+
+  &__text {
+    @include specify-grid-area(1, models-row-start, 1, models-row-end, 1, models-col-start, 4, models-col-end);
+  }
+
+  &__segment {
+
+  }
+
+  &__button {
+  @include specify-grid-area(4, models-row-start, 4, models-row-end, 1, models-col-start, 4, models-col-end)
+  }
+}

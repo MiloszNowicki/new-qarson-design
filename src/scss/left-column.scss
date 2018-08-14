@@ -1,0 +1,43 @@
+$left-column-item-flex-basis: 5%;
+
+.left-column{
+  display: flex;
+  flex-flow: column;
+  flex-wrap: nowrap;
+
+  &__filters {
+    flex-basis: 18*$left-column-item-flex-basis;
+  }
+
+  &__selection {
+    flex-basis: $left-column-item-flex-basis;
+  }
+
+  &__etat {
+    flex-basis: 2*$left-column-item-flex-basis;
+  }
+
+  &__fuel {
+    flex-basis: 2*$left-column-item-flex-basis;
+  }
+
+  &__gearbox {
+    flex-basis: 2*$left-column-item-flex-basis;
+  }
+
+  &__equipment {
+    flex-basis: 4*$left-column-item-flex-basis;
+  }
+
+  &__budget {
+    flex-basis: 4*$left-column-item-flex-basis;
+  }
+
+  &__offers {
+    flex-basis: 3*$left-column-item-flex-basis;
+  }
+
+  &__small-banner {
+    flex-basis: 2*$left-column-item-flex-basis;
+  }
+}

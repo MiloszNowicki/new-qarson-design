@@ -1,7 +1,14 @@
 @import "grid";
 @import "menu";
 @import "header";
-@import "point";
+@import "other/point";
+@import "reset";
+@import "left-column";
+@import "list";
+@import "citadines";
+@import "models";
+@import "makes";
+@import "footer";
 
 * {
   background-color: black;

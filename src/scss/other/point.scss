@@ -1,0 +1,45 @@
+$point-column-width: 100%/3;
+
+.description {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  max-height: 100%;
+
+
+  &__addres {
+    flex-basis: 35%;
+  }
+
+  &__meet-up {
+    flex-basis: 15%;
+  }
+
+  &__opening-hours {
+    flex-basis: 50%;
+  }
+}
+
+.opening-hours {
+  @include specify-grid(
+    4,
+    1fr,
+    opening-row-line-start,
+    opening-row-line-end,
+    2,
+    1fr,
+    opening-column-line-start,
+    opening-column-line-end
+  );
+  &__title {
+    @include specify-grid-area(1, opening-row-line-start, 2, opening-row-line-end, 1, opening-column-start, 3, opening-column-end)
+  }
+
+  &__hours {
+    @include specify-grid-area(3, opening-row-line-start, 5, opening-row-line-end, 1, opening-column-start, 3, opening-column-end)
+  }
+
+  &__social {
+    @include specify-grid-area(5, opening-row-line-start, 5, opening-row-line-end, 1, opening-column-start, 3, opening-column-end)
+  }
+}

@@ -1,0 +1,21 @@
+.footer {
+  display:flex;
+  flex-flow: column;
+  flex-wrap: nowrap;
+
+  &__social {
+    flex-basis:20%;
+  }
+
+  &__additional {
+    flex-basis: 80%;
+    display:flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+
+    .info {
+      flex-basis: 25%;
+    }
+  }
+}
+

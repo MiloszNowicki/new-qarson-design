@@ -1,0 +1,36 @@
+$point-column-width: 100%/3;
+
+@mixin specify-grid-area(
+  $number-where-row-starts,
+  $row-name-start,
+  $row-name-end,
+  $number-where-row-ends,
+
+  $number-where-column-starts,
+  $which-col-start,
+  $col-line-end,
+  $number-where-column-ends
+){
+  grid-row-start: $number-where-row-starts $row-name-start;
+  grid-row-end: $row-name-end $number-where-row-ends;
+
+  grid-column-start: $number-where-column-starts $which-col-start;
+  grid-column-end: $col-line-end $number-where-column-ends;
+
+  border: solid 2px cornflowerblue;
+}
+
+@mixin specify-grid(
+  $row-number,
+  $row-space,
+  $row-line-name-start,
+  $row-line-name-end,
+  $column-number,
+  $column-space,
+  $column-line-number-name-start,
+  $column-line-number-name-end
+){
+  display: grid;
+  grid-template-rows: repeat($row-number, [$row-line-name-start] $row-space [$row-line-name-end]);
+  grid-template-columns: repeat($column-number, [$column-line-number-name-start] $column-space [$column-line-number-name-end]);
+}

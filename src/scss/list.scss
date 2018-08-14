@@ -1,0 +1,10 @@
+
+
+.list {
+  @include specify-grid(2, 1fr,  list-row-start, list-row-end, 3, 1fr, list-col-start, list-col-end);
+
+  &__banner {
+    grid-area: banner;
+    @include specify-grid-area(1, list-row-start, 1, list-row-end, 3, list-col-start, 4, list-col-end);
+  }
+}
